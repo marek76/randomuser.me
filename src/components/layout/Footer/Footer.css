@@ -1,0 +1,21 @@
+.app-footer {
+  flex-shrink: 0;
+  background-color: #1f2933;
+  color: #cbd2d9;
+  padding: 0 1.5rem;
+  border-top: 1px solid #323f4b;
+}
+
+.app-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.app-footer__click-count {
+  color: #9aa5b1;
+}

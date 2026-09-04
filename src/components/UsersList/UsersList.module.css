@@ -1,0 +1,18 @@
+/* components/UsersList/UsersList.css */
+.usersList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.usersListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userCard {
+  composes: userCard from '../UserCard/UserCard.module.css';
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}

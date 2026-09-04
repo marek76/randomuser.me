@@ -1,0 +1,12 @@
+/* components/GenderFilter/GenderFilter.css */
+.gender-filter {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .gender-filter__option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
