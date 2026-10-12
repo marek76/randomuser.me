@@ -8,6 +8,33 @@
   font-size: 1rem;
 }
 
+.userCard:hover,
+.userCard:focus-within {
+  background: var(--accent-bg);
+}
+
+.userCardButton {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.userCardButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .userCardAvatar {
   width: 48px;
   height: 48px;
