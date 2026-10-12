@@ -1,0 +1,32 @@
+.usersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.usersListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.userCard {
+  composes: userCard from '../UserCard/UserCard.module.css';
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.errorBanner {
+  color: var(--text-h);
+  margin-bottom: 0.75rem;
+}

@@ -1,0 +1,20 @@
+.mainNavigation {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.mainNavigation a {
+  color: var(--primary-link-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.mainNavigation a:hover,
+.mainNavigation a:focus-visible {
+  color: var(--accent);
+}
+
+.mainNavigation a.active {
+  color: var(--primary-link-active-color);
+}
