@@ -7,6 +7,7 @@
  */
 
 declare const userCard: string;
+declare const userCardButton: string;
 declare const userCardAvatar: string;
 declare const userCardInfo: string;
 declare const userCardName: string;
@@ -17,6 +18,7 @@ declare const userCardCountry: string;
 
 export {
 	userCard,
+	userCardButton,
 	userCardAvatar,
 	userCardInfo,
 	userCardName,
@@ -28,6 +30,7 @@ export {
 
 declare const __default_export__: {
 	userCard: typeof userCard;
+	userCardButton: typeof userCardButton;
 	userCardAvatar: typeof userCardAvatar;
 	userCardInfo: typeof userCardInfo;
 	userCardName: typeof userCardName;

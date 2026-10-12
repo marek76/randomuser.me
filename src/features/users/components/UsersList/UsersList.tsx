@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { UserCard } from '../UserCard/UserCard';
 import { GenderFilter } from '../GenderFilter/GenderFilter';
+import { UserDetailsDialog } from '../UserDetailsDialog/UserDetailsDialog';
 import { useUser } from '../../hooks/useUser';
+import type { User } from '../../types';
 import styles from './UsersList.module.css';
 
 export function UsersList() {
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const {
     users,
     status,
@@ -53,9 +57,15 @@ export function UsersList() {
 
       <div className={styles.usersList}>
         {users.map((user) => (
-          <UserCard key={user.id} user={user} className={styles.userCard} />
+          <UserCard
+            key={user.id}
+            user={user}
+            className={styles.userCard}
+            onSelect={setSelectedUser}
+          />
         ))}
       </div>
+      <UserDetailsDialog user={selectedUser} onClose={() => setSelectedUser(null)} />
     </section>
   );
 }
