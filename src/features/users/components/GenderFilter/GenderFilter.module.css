@@ -1,0 +1,11 @@
+.genderFilter {
+  display: flex;
+  gap: 16px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}

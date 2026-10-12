@@ -1,0 +1,50 @@
+.userCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 4px;
+  flex: 1 0 30%;
+  font-size: 1rem;
+}
+
+.userCardAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.userCardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.userCardName {
+  display: flex;
+  gap: 0.35em;
+  color: var(--text-h);
+}
+
+.userCardFirstname {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userCardLastname {
+  font-weight: 600;
+}
+
+.userCardEmail,
+.userCardCountry {
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}

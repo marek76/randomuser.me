@@ -1,7 +1,12 @@
-import { Layout } from './components/layout/Layout';
+import { Layout } from './layout/Layout';
+import { UsersList } from './features/users/components/UsersList/UsersList';
 
 function App() {
-  return <Layout />;
+  return (
+    <Layout>
+      <UsersList />
+    </Layout>
+  );
 }
 
 export default App;
