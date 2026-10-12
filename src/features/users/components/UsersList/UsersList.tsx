@@ -1,34 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
-import { fetchUsers } from '../../usersSlice';
-import {
-  selectFilteredUsers,
-  selectIsRefreshing,
-  selectUsersError,
-  selectUsersStatus,
-} from '../../usersSelectors';
-import type { Gender } from '../../types';
 import { UserCard } from '../UserCard/UserCard';
 import { GenderFilter } from '../GenderFilter/GenderFilter';
+import { useUser } from '../../hooks/useUser';
 import styles from './UsersList.module.css';
 
 export function UsersList() {
-  const dispatch = useAppDispatch();
-  const status = useAppSelector(selectUsersStatus);
-  const error = useAppSelector(selectUsersError);
-  const isRefreshing = useAppSelector(selectIsRefreshing);
-  const [genderFilter, setGenderFilter] = useState<Gender | null>(null);
-  const users = useAppSelector((state) => selectFilteredUsers(state, genderFilter));
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchUsers());
-    }
-  }, [status, dispatch]);
-
-  const handleRefresh = () => {
-    dispatch(fetchUsers(true));
-  };
+  const {
+    users,
+    status,
+    error,
+    isRefreshing,
+    genderFilter,
+    setGenderFilter,
+    refresh,
+  } = useUser();
 
   if (status === 'loading') {
     return <p>Načítám uživatele…</p>;
@@ -38,7 +22,7 @@ export function UsersList() {
     return (
       <div>
         <p role="alert">Chyba: {error}</p>
-        <button type="button" onClick={handleRefresh}>
+        <button type="button" onClick={refresh}>
           Zkusit znovu
         </button>
       </div>
@@ -50,7 +34,7 @@ export function UsersList() {
       <div className={styles.usersListHeader}>
         <h3>Users List</h3>
         <GenderFilter value={genderFilter} onChange={setGenderFilter} />
-        <button type="button" onClick={handleRefresh} disabled={isRefreshing}>
+        <button type="button" onClick={refresh} disabled={isRefreshing}>
           {isRefreshing ? 'Obnovuji…' : 'Obnovit data'}
         </button>
       </div>
